@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+// import Card from '../components/Card.astro';
+import '../styles/global.css';
 
 const pageTitle = 'About me: '
 
@@ -79,7 +80,7 @@ const goal = 3;
     <section>
       <p>My skills are:</p>
       <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
     </section>
 
@@ -101,7 +102,7 @@ const goal = 3;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
+		/* color: white; */
 		font-size: 20px;
 		line-height: 1.6;
 	}
@@ -121,6 +122,10 @@ const goal = 3;
 		text-align: center;
 		margin-bottom: 1em;
 	}
+  h3 {
+    color: purple;
+    font-size: 2rem;
+  } 
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
@@ -152,4 +157,7 @@ const goal = 3;
 		gap: 2rem;
 		padding: 0;
 	}
+  .skill {
+    font-weight: bold;
+  }
 </style>

@@ -1,7 +1,5 @@
 # Learning Roadmap
 
-
-
 | Fecha de Inicio | Fecha de Fin    | Tema Principal                        | Duración Estimada |
 | --------------- | --------------- | ------------------------------------- | ----------------- |
 | 26-11 | 10-12 | Fundamentos Avanzados de JavaScript   | 2 semanas         |
@@ -11,7 +9,6 @@
 | 29-01 | 09-02 | SQL (Bases)                           | 1.5 semanas       |
 | 10-02 | 21-02 | PostgreSQL                            | 1.5 semanas       |
 
----
 
 ### **Detalles por Sección**
 
