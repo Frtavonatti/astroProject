@@ -1,6 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+const pageTitle = 'About me: '
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <Layout title="Welcome to Astro.">
@@ -40,6 +55,7 @@ import Card from '../components/Card.astro';
     <a href="/blog/">Blog</a>
 
 		<h1>Welcome to <span class="text-gradient">About</span></h1>
+    <h3>{pageTitle}</h3>
     
     <p class="instructions">
       I am working through <strong>Astro's introductory tutorial.</strong> <br />  This is the second page on my website
@@ -48,6 +64,34 @@ import Card from '../components/Card.astro';
     <p class="instructions">
       This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!
     </p>
+
+    <section>
+      <p>Here are a few facts about me:</p>
+      <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+        {identity.hobbies.length >= 2 &&
+          <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+        }
+      </ul>
+    </section>
+
+    <section>
+      <p>My skills are:</p>
+      <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+      </ul>
+    </section>
+
+    <section class="conditional-rendering">
+      <h3 class="conditional-rendering"> Conditional Rendering: </h3>
+      <ul>
+        {happy && <li>I am happy to be learning Astro!</li>}
+        {finished && <li>I finished this tutorial!</li>}
+        {goal === 3 ? <li>My goal is to finish in 3 days.</li> : <li>My goal is not 3 days.</li>}
+      </ul>
+
+    </section>
 	</main>
 </Layout>
 
