@@ -19,8 +19,9 @@ const { pageTitle } = Astro.props;
     {pageTitle && <h1>Welcome to <span class="text-gradient">{pageTitle}</span></h1>}
     <!-- La etiqueta <slot /> permite inyectar (o “introducir”) contenido hijo escrito entre las 
      etiquetas de apertura y cierre <Component></Component> en cualquier archivo Component.astro. -->
-    <slot />
-    <Footer />
+		 <slot />
+		 <Footer />
+		 
     <script>
       import "../scripts/menu.js";
     </script>
