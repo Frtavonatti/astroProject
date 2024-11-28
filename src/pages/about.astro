@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = 'About me: '
@@ -17,6 +18,8 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+// To-DO: define a style variable and use it in the local CSS as var(--color)
 ---
 
 <Layout title="Welcome to Astro.">
@@ -50,10 +53,7 @@ const goal = 3;
 			</defs>
 		</svg>
 
-    <!-- Navigation -->
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+		<Header/>
 
 		<h1>Welcome to <span class="text-gradient">About</span></h1>
     <h3>{pageTitle}</h3>
@@ -91,8 +91,9 @@ const goal = 3;
         {finished && <li>I finished this tutorial!</li>}
         {goal === 3 ? <li>My goal is to finish in 3 days.</li> : <li>My goal is not 3 days.</li>}
       </ul>
-
     </section>
+
+		<Footer/>
 	</main>
 </Layout>
 
@@ -102,7 +103,7 @@ const goal = 3;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		/* color: white; */
+		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -34,10 +36,7 @@ import Layout from '../layouts/Layout.astro';
 			</defs>
 		</svg>
 
-    <!-- Navigation -->
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+		<Header/>
 
 		<h1>My Astro <span class="text-gradient">Learning Blog</span></h1>
     <p class="instructions">
@@ -48,7 +47,9 @@ import Layout from '../layouts/Layout.astro';
     <li><a href="/posts/post-2/">Post 2</a></li>
     <li><a href="/posts/post-3/">Post 3</a></li>
     <li><a href="/posts/post-4/">Post 4</a></li>
+		<li><a href="/posts/post-12/">Post 12</a></li>
     </ul>
+		<Footer/>
 	</main>
 </Layout>
 
@@ -77,6 +78,13 @@ import Layout from '../layouts/Layout.astro';
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+	}
+	li a {
+		color: white;
+		font-weight: bold;
+  }
+	li a:visited {
+		color: #b909b9; 
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
