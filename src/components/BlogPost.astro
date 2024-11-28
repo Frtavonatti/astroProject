@@ -1,0 +1,50 @@
+---
+const { url, title } = Astro.props
+---
+
+<div>
+  <li><a href={url}>{title}</a></li>
+</div>
+
+<style>
+  div {
+    width: 300px;
+    height: 70px;;
+    list-style: none;
+		display: flex;
+    align-items: center;
+		padding: 1px;
+    margin: 10px;
+		background-color: #23262d;
+		background-image: none;
+		background-size: 400%;
+    border: 2px solid rgb(145, 142, 142);
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  li {
+    padding: 25px;
+  }
+  li a {
+    font-weight: bold;
+		text-decoration: none;
+		line-height: 1.4;
+		border-radius: 8px;
+		color: white;
+		opacity: 0.8;
+  } 
+	li a:visited {
+		color: white; 
+	}
+
+  /* Animation effect */
+  div:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	div:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	}
+</style>

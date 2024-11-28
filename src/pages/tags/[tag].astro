@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro'
+
+// Pending: Study this function
+// Una función getStaticPaths siempre debe devolver 
+// una lista de objetos que contengan params (cómo llamar a cada ruta de página)
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob('../posts/*.md');
+  
+  // El constructor Set crea un nuevo objeto Set, que elimina duplicados del array
+  // spread operator se ocupa para convertir el Set de vuelta en un array
+  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {posts.map((post) => 
+      <BlogPost 
+        url={post.frontmatter.url} 
+        title={post.frontmatter.title}
+      />)}
+  </ul>
+</BaseLayout>

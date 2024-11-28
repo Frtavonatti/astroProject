@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md');
+// Astro.glob es util para consultar datos a los archivos locales
 ---
 
 <BaseLayout>
@@ -8,12 +11,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="instructions">
       This is where I will post about my journey learning  <strong>Astro.</strong>
     </p>
-    <ul>
-			<li><a href="/posts/post-express/">Express Declarations Order</a></li>
-			<li><a href="/posts/post-0/">Learning Path</a></li>
-			<li><a href="/posts/post-1/">Post 1</a></li>
-			<li><a href="/posts/post-2/">Post 2</a></li>
-			<li><a href="/posts/post-3/">Post 3</a></li>
+    <ul class="blogs-container">
+			{allPosts.map((post) => 
+				<BlogPost url={post.url} title={post.frontmatter.title}/>)}
     </ul>
 
 	</main>
@@ -44,13 +44,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
-	}
-	li a {
-		color: white;
-		font-weight: bold;
-  }
-	li a:visited {
-		color: #b909b9; 
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
@@ -83,4 +76,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		gap: 2rem;
 		padding: 0;
 	}
+	.blogs-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		list-style: none;
+		padding: 0;
+		@media (max-width: 600px) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
 </style>
