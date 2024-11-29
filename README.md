@@ -23,6 +23,3 @@ The project structure is as follows:
 ```
 
 This structure includes the main directories and files used in the project.
-
-## Documentation
-For detailed instructions and documentation, please refer to the [Astro tutorial documentation](https://docs.astro.build/en/getting-started/).

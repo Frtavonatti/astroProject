@@ -4,7 +4,36 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <div class="tags">
+    {frontmatter.tags.map((tag) => (
+      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+  </div>
+
   <p>{frontmatter.description}</p>
   <p>By {frontmatter.author} on {new Date(frontmatter.pubDate).toDateString()}</p>
   <slot />
 </BaseLayout>
+
+<!-- This styles are also used on /pages/tags/index
+TO-DO: Make a tags component -->
+<style>
+  a {
+    font-weight: bold;
+    color: white;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #992cff;
+  }
+</style>
