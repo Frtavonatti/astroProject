@@ -1,6 +1,8 @@
 # Astro Project
 This project is developed by following the [Astro tutorial documentation](https://docs.astro.build/en/getting-started/).
 
+The project is deployed at [https://astroprojecttest.netlify.app/](https://astroprojecttest.netlify.app/).
+
 ## Project Structure
 The project structure is as follows:
 ```
