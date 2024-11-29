@@ -12,8 +12,7 @@ const identity = {
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
-const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 // To-DO: define a style variable and use it in the local CSS as var(--color)
@@ -53,7 +52,6 @@ const goal = 3;
     <section class="conditional-rendering">
       <h3 class="conditional-rendering"> Conditional Rendering: </h3>
       <ul>
-        {happy && <li>I am happy to be learning Astro!</li>}
         {finished && <li>I finished this tutorial!</li>}
         {goal === 3 ? <li>My goal is to finish in 3 days.</li> : <li>My goal is not 3 days.</li>}
       </ul>

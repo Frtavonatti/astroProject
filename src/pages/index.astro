@@ -1,12 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
+import Greeting from '../components/Greetings';
 import '../styles/global.css';
 
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <main>
+
+		<!-- Astro Islands 
+		  the client:load directive tells Astro to send and rerun its JavaScript
+		  on the client when the page loads, making the component interactive. -->
+		<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+		<!--  -->
+
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.

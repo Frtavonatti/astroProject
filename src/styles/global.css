@@ -13,6 +13,16 @@ body {
   line-height: 1.5;
 }
 
+html.light {
+  /* background-color: #a3a3a3; */
+  background-color: #a3a3a3;
+  color: #292929;
+}
+
+.light .nav-links a {
+  color: #292929;
+}
+
 * {
   box-sizing: border-box;
 }
